@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gonnet.NET - Votre boutique en ligne préférée</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <custom-header></custom-header>
+    
+    <!-- Main Content -->
+    <main class="min-h-screen">
+        <!-- Hero Banner -->
+        <section class="bg-gradient-to-r from-orange-500 to-red-500 py-8 px-4">
+            <div class="container mx-auto text-center text-white">
+                <h1 class="text-4xl font-bold mb-4">Bienvenue sur Gonnet.NET</h1>
+                <p class="text-xl mb-6">Découvrez nos meilleures offres du moment</p>
+                <button class="bg-white text-orange-500 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                    Acheter maintenant
+                </button>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="py-12 px-4">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8">Produits Populaires</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="featured-products">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="py-12 bg-white px-4">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8">Catégories</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="category-card bg-orange-50 rounded-lg p-6 text-center hover:bg-orange-100 transition duration-300 cursor-pointer">
+                        <i data-feather="smartphone" class="w-12 h-12 mx-auto mb-4 text-orange-500"></i>
+                        <h3 class="font-semibold text-lg">Électronique</h3>
+                    </div>
+                    <div class="category-card bg-blue-50 rounded-lg p-6 text-center hover:bg-blue-100 transition duration-300 cursor-pointer">
+                        <i data-feather="shopping-bag" class="w-12 h-12 mx-auto mb-4 text-blue-500"></i>
+                        <h3 class="font-semibold text-lg">Mode</h3>
+                    </div>
+                    <div class="category-card bg-green-50 rounded-lg p-6 text-center hover:bg-green-100 transition duration-300 cursor-pointer">
+                        <i data-feather="home" class="w-12 h-12 mx-auto mb-4 text-green-500"></i>
+                        <h3 class="font-semibold text-lg">Maison</h3>
+                    </div>
+                    <div class="category-card bg-purple-50 rounded-lg p-6 text-center hover:bg-purple-100 transition duration-300 cursor-pointer">
+                        <i data-feather="heart" class="w-12 h-12 mx-auto mb-4 text-purple-500"></i>
+                        <h3 class="font-semibold text-lg">Beauté</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <custom-footer></custom-footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/2250716399297" target="_blank" class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition duration-300 flex items-center justify-center">
+            <i data-feather="message-circle" class="w-6 h-6"></i>
+        </a>
+    </div>
+
+    <!-- Components -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFeaturedProducts();
+        });
+    </script>
+</body>
+</html>
